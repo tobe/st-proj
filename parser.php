@@ -70,7 +70,9 @@ class Parser {
         foreach($out as $image => $data) {
             $out[$image]['vrijeme'] = sprintf('%s %s', $data['date'], $data['time']);
 
+            // JSON way (comment/uncomment either one of these)
             //$out[$image] = json_encode($data);
+            // Human readable way
             $out[$image] = implode("\r\n", array_map(
                 function ($v, $k) { return sprintf('%s: %s', $k, $v); },
                 $data,
